@@ -45,6 +45,7 @@ public class Human {
 
     private void addParent(Human parent1, Human parent2) {
         checkSameGender(parent1, parent2);
+
         if (parent1.isMale) {
             this.father = parent1;
             this.mother = parent2;
