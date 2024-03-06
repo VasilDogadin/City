@@ -33,9 +33,9 @@ public class Human {
 
     public Human birthBaby(String name, String surname, String patronymic, boolean isMale, Human parent2) {
         checkSameGender(parent2);
-        Human human = new Human(name, surname, patronymic, isMale);
-        human.addParent(this, parent2);
-        return human;
+        Human child = new Human(name, surname, patronymic, isMale);
+        child.addParent(this, parent2);
+        return child;
     }
 
     public String getFullName() {
@@ -43,7 +43,7 @@ public class Human {
     }
 
     private void addParent(Human parent1, Human parent2) {
-        checkSameGender(parent2);
+        parent1.checkSameGender(parent2);
         if (parent1.isMale) {
             this.father = parent1;
             this.mother = parent2;
