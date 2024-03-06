@@ -19,13 +19,12 @@ public class Human {
     @NonNull
     //отчество
     private String patronymic;
-    @NonNull
-    private boolean isMale;
+    private final boolean isMale;
     private Human father;
     private Human mother;
     private List<Human> children = new ArrayList<>();
 
-    public Human(@NonNull String name, @NonNull String surname, @NonNull String patronymic, @NonNull boolean isMale) {
+    public Human(@NonNull String name, @NonNull String surname, @NonNull String patronymic, boolean isMale) {
         this.name = StringUtils.capitalize(name);
         this.surname = StringUtils.capitalize(surname);
         this.patronymic = StringUtils.capitalize(patronymic);
@@ -33,7 +32,7 @@ public class Human {
     }
 
     public Human birthBaby(String name, String surname, String patronymic, boolean isMale, Human parent2) {
-        checkSameGender(this, parent2);
+        checkSameGender(parent2);
         Human human = new Human(name, surname, patronymic, isMale);
         human.addParent(this, parent2);
         return human;
@@ -44,8 +43,7 @@ public class Human {
     }
 
     private void addParent(Human parent1, Human parent2) {
-        checkSameGender(parent1, parent2);
-
+        checkSameGender(parent2);
         if (parent1.isMale) {
             this.father = parent1;
             this.mother = parent2;
@@ -57,9 +55,9 @@ public class Human {
         parent2.children.add(this);
     }
 
-    private void checkSameGender(Human human1, Human human2) {
-        if (human1.isMale == human2.isMale) {
-            throw new HumanSameGenderException("Родители одного пола");
+    protected void checkSameGender(Human human) {
+        if (this.isMale == human.isMale) {
+            throw new HumanSameGenderException("У людей один пол");
         }
     }
 
