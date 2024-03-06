@@ -55,7 +55,7 @@ public class Human {
         parent2.children.add(this);
     }
 
-    protected void checkSameGender(Human human) {
+    public void checkSameGender(Human human) {
         if (this.isMale == human.isMale) {
             throw new HumanSameGenderException("У людей один пол");
         }
