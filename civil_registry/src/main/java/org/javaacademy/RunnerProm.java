@@ -1,7 +1,8 @@
 package org.javaacademy;
 
 import javaacademy.human.Human;
-import org.javaacademy.model.Citizen;
+import org.javaacademy.civilRegistry.CivilRegistry;
+import org.javaacademy.civilRegistry.model.Citizen;
 import java.time.LocalDate;
 
 public class RunnerProm {

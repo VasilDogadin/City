@@ -1,4 +1,4 @@
-package org.javaacademy.model;
+package org.javaacademy.civilRegistry.model;
 
 import javaacademy.human.Human;
 import lombok.AllArgsConstructor;

@@ -1,4 +1,4 @@
-package org.javaacademy.model;
+package org.javaacademy.civilRegistry.model;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -8,12 +8,12 @@ import lombok.experimental.FieldDefaults;
 
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-public enum FamilyStatus {
-    DIVORCED("Разведен"),
-    MARRIED("В браке"),
-    SINGLE("Не в браке");
+public enum TypeRegister {
+    BIRTH("Рождение"),
+    WEDDINGS("Свадьба"),
+    DIVORCE("Развод");
 
     @Getter
     @NonNull
-    String status;
+    String value;
 }

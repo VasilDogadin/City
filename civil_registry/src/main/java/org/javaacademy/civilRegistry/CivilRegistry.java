@@ -1,4 +1,4 @@
-package org.javaacademy;
+package org.javaacademy.civilRegistry;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -6,10 +6,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeMap;
 import javaacademy.human.Human;
-import org.javaacademy.model.Citizen;
-import org.javaacademy.model.RecordTypeRegister;
-import static org.javaacademy.model.FamilyStatus.*;
-import static org.javaacademy.model.TypeRegister.*;
+import org.javaacademy.civilRegistry.model.Citizen;
+import org.javaacademy.civilRegistry.model.RecordTypeRegister;
+import static org.javaacademy.civilRegistry.model.FamilyStatus.*;
+import static org.javaacademy.civilRegistry.model.TypeRegister.*;
 
 public class CivilRegistry {
     private final String name;
@@ -67,7 +67,10 @@ public class CivilRegistry {
 
     public String getStatistics(LocalDate date) {
         if (!records.containsKey(date)) {
-            return String.format("Статистика по ЗАГС: %s \nДата %s: нет ни одной записи за эту дату!", name, date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
+            return String.format("Статистика по ЗАГС: %s \n" +
+                            "Дата %s: нет ни одной записи за эту дату!",
+                    name,
+                    date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")));
         }
         List<RecordTypeRegister> recordsForDate = records.get(date);
         long countWeddings = recordsForDate.stream()
@@ -79,7 +82,8 @@ public class CivilRegistry {
         long countBirth = recordsForDate.stream()
                 .filter(record -> record.getTypeRegister().equals(BIRTH))
                 .count();
-        return String.format("Статистика по ЗАГС: %s \nДата %s: количество свадеб - %s, количество разводов - %s, количество рождений - %s",
+        return String.format("Статистика по ЗАГС: %s \n" +
+                        "Дата %s: количество свадеб - %s, количество разводов - %s, количество рождений - %s",
                 name,
                 date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")),
                 countWeddings,
