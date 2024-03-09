@@ -1,4 +1,4 @@
-package org.javaacademy.civilRegistry.model;
+package org.javaacademy.registry.model;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

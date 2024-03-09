@@ -1,4 +1,7 @@
-package org.javaacademy.civilRegistry;
+package org.javaacademy.registry;
+
+import static org.javaacademy.registry.model.FamilyStatus.*;
+import static org.javaacademy.registry.model.TypeRegister.*;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -6,10 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeMap;
 import javaacademy.human.Human;
-import org.javaacademy.civilRegistry.model.Citizen;
-import org.javaacademy.civilRegistry.model.RecordTypeRegister;
-import static org.javaacademy.civilRegistry.model.FamilyStatus.*;
-import static org.javaacademy.civilRegistry.model.TypeRegister.*;
+import org.javaacademy.registry.model.Citizen;
+import org.javaacademy.registry.model.RecordTypeRegister;
+
 
 public class CivilRegistry {
     private final String name;

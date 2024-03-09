@@ -1,13 +1,13 @@
-package org.javaacademy.civilRegistry.model;
+package org.javaacademy.registry.model;
 
+import java.time.LocalDate;
+import java.util.List;
+import java.util.stream.Collectors;
 import javaacademy.human.Human;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
-import java.time.LocalDate;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @AllArgsConstructor
 @Setter
