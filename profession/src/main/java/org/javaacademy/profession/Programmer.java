@@ -10,9 +10,8 @@ public class Programmer extends Employee {
     private static final BigDecimal MIN_RATE = new BigDecimal(1500);
     private static final BigDecimal MAX_RATE = new BigDecimal(2000);
 
-    public Programmer(@NonNull Human human,BigDecimal hourlyRate) {
+    public Programmer(@NonNull Human human) {
         super(human);
-        setHourlyRate(hourlyRate);
     }
 
     public void takeTask(Task task) {
