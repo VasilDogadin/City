@@ -24,6 +24,7 @@
         <lombok.version>1.18.26</lombok.version>
         <commons-lang3>3.14.0</commons-lang3>
         <commons-collections4.version>4.4</commons-collections4.version>
+        <junit-jupiter-api-version>5.10.2</junit-jupiter-api-version>
     </properties>
 
     <dependencyManagement>
@@ -42,6 +43,11 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-collections4</artifactId>
                 <version>${commons-collections4.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>${junit-jupiter-api-version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

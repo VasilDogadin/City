@@ -14,7 +14,6 @@ import org.javaacademy.task.Task;
 
 @Getter
 @Setter
-@ToString
 public class Company {
     private String name;
     private Manager manager;
